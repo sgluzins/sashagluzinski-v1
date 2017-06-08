@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>s. gluzinski</title>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:200,300,100">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Amatic+SC">
+
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/mapdata/custom/world.js"></script>
+</head>
+
+<body>
+
+    <div id="container">
+        <header class="container">
+            <div class="row">
+                <h1 class="col-sm-12">sasha gluzinski</h1>
+                <hr>
+            </div>
+            <div class="row">
+                <nav class="col-sm-6 col-sm-offset-3">
+                    <p><a href="index">home</a></p>
+                    <p><a href="about">about</a></p>
+                    <p><a href="goals">goals</a></p>
+                   <!-- <p><a href="portfolio.html">portfolio</a></p> -->
+            </div>
+        </header>
+        <section class="jumbotron" id="goals">
+            <h2> 1. satisfy my wanderlust; <br class="rwd-break"> see more of the world </h2>
+            I come from a home with parents of different ethnicities.
+            <br>This has given me the chance to embrace two different cultures my whole life.
+            <br><br class="rwd-break"> 그리고 어렸을 때부터 한글도 배웠습니다 &nbsp; 
+            <br class="rwd-break"> (and I was able to learn Korean from a young age)
+            <br><br> I was fortunate enough to spend much of my childhood in Asia
+            <br> and this allowed me the opportunity 
+            <br class="rwd-break">to travel extensively throughout the region.
+            <br><br class="rwd-break"> My desire to travel has never lost traction - 
+            <br class="rwd-break"> there will never be too much to see in this world!
+
+            <div id="travel">
+                <div class="loading">
+                    <i class="icon-spinner icon-spin icon-large"></i> Loading data from Google Spreadsheets...
+                    <script language="javascript">
+$(function () {
+    Highcharts.data({
+
+        googleSpreadsheetKey: '1RxwXaBS69UOsm0v14GqfhFhks9sygSh1Sn7Y7NjWMuY',
+
+        // custom handler when the spreadsheet is parsed
+        parsed: function (columns) {
+
+            // Read the columns into the data array
+            var data = [];
+            $.each(columns[0], function (i, code) {
+                data.push({
+                    code: code.toUpperCase(),
+                    value: columns[2][i],
+                    name: columns[1][i],
+                    details: columns[3][i],
+                });
+            });
+
+
+            // Initiate the chart
+            Highcharts.mapChart('travel', {
+                chart: {
+                    borderWidth: 1,
+                    borderColor: 'white',
+                        style: {
+                        fontFamily: 'Lato',
+                        }
+                },
+
+                title: {
+                    text: ''
+                },
+
+                mapNavigation: {
+                    enabled: true
+                },
+
+                legend: {
+                    align: 'right',
+                    verticalAlign: 'bottom',
+                    floating: true,
+                    layout: 'vertical',
+                    valueDecimals: 0,
+                    backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor) || 'rgba(255, 255, 255, 0.85)',
+                    symbolRadius: 0,
+                    symbolHeight: 14,
+                },
+
+            tooltip: {
+                pointFormat: '{point.name} <b> {point.details}</b>'
+            },
+
+                colorAxis: {
+                    dataClasses: [{
+                        to: 0,
+                        color: '#f4f4f4',
+                        name: 'yet to explore',
+                    }, {
+                        from: 1,
+                        to: 1,
+                        color: 'rgba(212, 100, 212, 0.3)',
+                        name: 'i\'ve lived in',
+                    }, {
+                        from: 2,
+                        to: 2,
+                        color: 'rgba(100, 212, 212, 0.3)',
+                        name: 'i\'ve visited',
+                    }],
+                },
+
+                series: [{
+                    data: data,
+                    mapData: Highcharts.maps['custom/world'],
+                    joinBy: ['iso-a2', 'code'],
+                    animation: true,
+                    name: 'country:',
+                    states: {
+                        hover: {
+                            color: '#ffffff'
+                        }
+                    },
+                }]
+            });
+        },
+        error: function () {
+            $('#container').html('<div class="loading">' +
+                '<i class="icon-frown icon-large"></i> ' +
+                'Error loading data from Google Spreadsheets' +
+                '</div>');
+        }
+    });
+});
+</script>
+                </div>
+            </div>
+
+            <br>
+            <h2>2. powerlifting: 57kg; total > 300kg </h2>
+            After a long hiatus, I started to actively lift weights again 
+            <br class="rwd-break"> in the middle of 2016 with a focus on powerlifting.
+            <br><br class="rwd-break"> Towards the end of the year, 
+            <br class="rwd-break">I went to a powerlifting meet as a spectator 
+            <br class="rwd-break"> and that is when my passion for the sport began to grow.
+            <br><br> There is still a long way to go and 
+            <br class="rwd-break"> a lot to learn but it has been a fun journey thus far.
+            <br><br class="rwd-break"> I have set some personal goals for myself 
+            <br class="rwd-break"> and I can't wait to get to the point where
+            <br class="rwd-break"> I look back at where I am now and see how far I've come.
+            <br>
+
+            <h2>3. continue to learn about <br class="rwd-break"> different front-end technologies </h2>
+            Design has always been something that has sustained my interest; 
+            <br class="rwd-break"> and I have always loved solving puzzles.
+            <br><br class="rwd-break"> Putting code + design together to do something, 
+            <br class="rwd-break"> such as create a website, allows me to combine two things I enjoy.
+            <br><br> I find it gratifying to continuously enhance 
+            <br class="rwd-break"> my development skills in my spare time.
+            <br><br class="rwd-break"> Given the volume of online tools and forums, 
+            <br class="rwd-break"> I've always been inspired to never stop learning.
+            <br><br>
+            <a href="http://www.sukigluzinski.com" target="_blank"><img src="sukigluzinski.png" id="sukigluz"></img></a>
+            <br>sukigluzinski.com
+            <br><br>
+
+            <h2>4. dabble in more photography </h2>
+            Photography has always captivated me.
+            <br class="rwd-break"><br> Although I find it fascinating, it has never
+            <br class="rwd-break"> been something that I have invested much time in.
+            <br><br> I want to change that 
+            <br class="rwd-break">and become knowledgeable, skillful in the profession.
+            <br><br class="rwd-break"> Moving forward I will utilize the tools I received as gifts,
+            <br>as a token of inspiration to help express my artistic side,
+            <br class="rwd-break"> to take pictures that I will treasure.
+            <br class="rwd-break"><br>
+
+
+            <h2>5. lean in!</h2>
+            I love being involved.
+            <br> Being associated with different groups, clubs, and organizations
+            <br> has always been something that I strived for.
+            <br><br> Although I have stayed very active at my company through numerous outlets,
+            <br>(hackathons, conferences, training sessions, panels, community volunteer events, etc.)
+            <br>I want to be more involved in the community -
+            <br> with a focus on helping to close the gender gap in technology.
+            <br><br> ---
+            <br><br> Sheryl Sandberg's <i>Lean In</i> is a very inspirational book
+            <br> that focuses on the importance of female growth in the workplace.
+            <br><br>Not only did her book help me reflect on my career,
+            <br> it also made me think more about the bigger picture.
+        </section>
+
+
+        <footer class="container">
+            <hr>
+            <div class="col-sm-8 col-sm-offset-2" id="footer">
+                <p class="col-sm-1">
+                    <a href="https://www.linkedin.com/in/sasha-gluzinski-18423140">
+                        <i class="fa fa-linkedin"></i>
+                    </a>
+                </p>
+
+                <p class="col-sm-1">
+                    <a href="mailto:sgluzins@gmail.com">
+                        <i class="fa fa-envelope-o"></i>
+                    </a>
+                </p>
+
+                <p class="col-sm-1">
+                    <a href="https://sgluzins.yelp.com">
+                        <i class="fa fa-yelp"></i>
+                    </a>
+                </p>
+
+                <p class="col-sm-1">
+                    <a href="https://www.facebook.com/sasha.gluzinski">
+                        <i class="fa fa-facebook"></i>
+                    </a>
+                </p>
+
+                <p class="col-sm-1">
+                    <a href="https://www.instagram.com/sgluzins/">
+                        <i class="fa fa-instagram"></I>
+                    </a>
+                </p>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91763208-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</html>

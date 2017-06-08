@@ -1,0 +1,167 @@
+html, body {
+  padding: 20px 0;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-weight: 200;
+}
+
+#container {
+	min-height: 100%;
+	position: relative;
+}
+
+header {
+	padding: 10px;
+}
+
+header h1 {
+	font-size: 40px;
+	font-weight: 100;
+	text-align: center;
+	padding: 20px 0 5px 0;
+}
+
+header nav,
+#footer {
+	font-weight: 200;
+	display: flex;
+	justify-content: center;
+}
+
+header p,
+footer p {
+	padding: 0 2rem;
+	margin: 0 0 10px;
+}
+
+footer img {
+	height: 25px;
+	width: 25px;
+	-webkit-filter: grayscale(100%);
+	border-radius: 10px;
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100% !important;
+	height: 100px;
+}
+
+.jumbotron {
+	background-color: white;
+	padding: 10px;
+	padding-bottom: 100px;
+}
+
+#main-display {
+	max-width: 100%;
+	height: auto;
+}
+
+#main, #error, #tellMeMore {
+	text-align: center;
+}
+
+#about {
+	padding: 0 12%;
+}
+
+.img-info {
+	border-radius: 50%;
+	height: 200px;
+	width: 200px;
+	object-fit: cover;
+	float: right;
+	object-position: 0% 0%;
+}
+
+#about li, .loading {
+	font-weight: 200;
+	font-size: 20px;
+	font-family: 'Amatic SC', Helvetica;
+	list-style-type: none;
+}
+
+#goals {
+	text-align: center;
+	margin: 20px;
+}
+
+#travel {
+    height: 500px; 
+    min-width: 310px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+}
+
+#portfolio {
+	text-align: center;
+	padding: 0 0 20px 0;
+}
+
+#sukigluz {
+	height: 240px;
+	width: 320px;
+    border: 1px dashed black;
+}
+
+.loading {
+    margin-top: 10em;
+    text-align: center;
+    color: gray;
+}
+
+h2 {
+	font-family: 'Amatic SC', Helvetica;
+}
+
+.rwd-break {
+	display: block;
+}
+
+a:link, a:visited {
+	color: black;
+	text-decoration: none;
+}
+
+a:hover {
+	color: silver;
+}
+
+hr {
+	border: 0.5px solid black;
+	width: 75%;
+}
+
+@media screen and (min-width: 1200px) {
+	#about {
+	padding: 0 20%;
+}
+}
+
+@media screen and (min-width: 650px) {
+.rwd-break {
+	display: none;
+}
+}
+
+@media screen and (max-width: 480px) {
+	#about li {
+	font-size: 18px;
+}
+	#goals {
+	margin: 0;
+}
+}
+@media screen and (max-width: 768px){
+	ul {
+		display: inline-block;
+	}
+	footer p {
+		padding-right: 20px;
+    	padding-left: 25px;
+	}
+}
